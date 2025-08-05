@@ -1,0 +1,14 @@
+name: Check Repo Size
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Check total size
+        run: du -sh . || true
